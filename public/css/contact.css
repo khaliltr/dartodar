@@ -1,0 +1,54 @@
+body, html {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 17px;
+}
+
+
+.desgin {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #21183C;
+    min-height: 100vh;
+}
+
+.login {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.desgin .logo {
+    color: white;
+    font-size: 49px;
+}
+
+form {
+    min-width: 45%;
+}
+form h1 {
+    text-align: center;
+}
+form small {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+form input, form select, form textarea {
+    background: #EDF2F7 !important;
+}
+
+
+.u-inline button {
+    width: 100%;
+}

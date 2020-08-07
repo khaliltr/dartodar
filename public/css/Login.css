@@ -1,0 +1,62 @@
+body, html {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    font-size: 19px;
+    position: relative;
+    font-family: Roboto, sans-serif;
+}
+.logo {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+    text-align: center;
+    right: 0;
+    left: 0;
+    
+}
+
+#user, #owner {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    min-height: 100vh;
+    
+}
+
+
+#user {
+    background: #21183C;
+}
+
+#owner {
+    background: #2D3748;
+
+}
+
+#user a, #owner a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+    background: #667EEA;
+    border-radius: 4px;
+}
+
+#user:hover {
+    flex-grow: 3;
+    background-color: #5A1D7E;
+}
+
+#owner:hover {
+    flex-grow: 3;
+    background-color: #404958;
+}

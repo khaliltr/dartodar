@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/contact.css')}}">
+{% endblock %}
+{% block body %}
+    <section class="desgin">
+        <div class="text" style="text-align:center;">
+            <h2 style="color:rgb(97, 191, 253);">Company Informations</h2>
+            <h4 style="color:white;">Adresse : Technopole manouba 2010 	</h4>
+            <h4 style="color:white;">Email : bechir21@yahoo.fr 	</h4>
+            <h4 style="color:white;">Tel : 52817963	</h4>
+        </div>
+    </section>
+    <section class="login">
+        {{ form(form) }}
+    </section>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script defer src="{{ asset('register-user/s.js')}}"></script>
+{% endblock %}

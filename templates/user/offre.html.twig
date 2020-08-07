@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes offres{% endblock %}
+
+{% block body %}
+
+    <br><br><br><br><br><br><br>
+    <div class="card">
+        <div class="card-header">
+            <h5>Titre :</h5>{{ publication.titre }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Description</h5>
+            <p class="card-text">{{ publication.contenu }}</p>
+        </div>
+        <div class="card-footer text-muted">
+            <h5 class="card-title pb-2">Commentaires : </h5>
+            {% for commentaire in commentaires %}
+            <div class="card border-primary text-center  mt-2"  >
+                <div class="card-header">{{ commentaire.source.prenom }} {{ commentaire.source.nom }}</div>
+                <div class="card-body text-primary">
+                    <p class="card-text">{{ commentaire.contenu }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="card border-primary mt-2"  >
+                <div class="card-header">{{ utilisateur.prenom }} {{ utilisateur.nom }}</div>
+                <div class="card-body text-primary">
+                    <p class="card-text"> {{ form(form) }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

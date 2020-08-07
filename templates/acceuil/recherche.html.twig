@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+    <br><br><br><br><br><br>
+    <div class="card">
+        <div class="card-header">
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="row">
+                <div class="col">
+                    {{ form_row(form.titre) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.type) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.ville) }}
+                </div>
+                <div class="col pt-4">
+                    {{ form_row(form.Envoyer) }}
+                </div>
+            </div>
+        </div>
+        {% if publications == "" %}
+            0 résultat
+        {% else %}
+
+
+            <div class="card">
+                <br>
+                <button type="button" class="btn btn-info col-2 ml-3" data-toggle="modal" data-target=".Addoffre-modal">
+                    Ajouter
+                </button>
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="">
+                        <tr>
+                            <th scope="col">#id</th>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Contenu</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for publication in publications %}
+                            <tr>
+                                <th scope="row">{{ publication.id}}</th>
+                                <td>{{ publication.titre}}</td>
+                                <td>{{ publication.contenu}}</td>
+                                <td><a class="btn btn-primary" href="{{ path('offre', { 'id': publication.id }) }}" role="button">Ouvrir</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+    </div>
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('register-user/style.css')}}">
+{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <section class="desgin">
+    </section>
+
+<section class="login">
+    <section class="login">
+
+
+{{ form_start(form) }}
+                    <h1>Register - User</h1>
+                    <small>Already have an account ? <a href="../login-user/index.html">Login</a></small>
+                    <div class="form-group">
+                        {{ form_row(form.nom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.prenom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.email) }}
+                    </div>
+            <div class="form-group">
+                {{ form_row(form.plainPassword) }}
+            </div>
+
+
+                    <div class="u-inline">
+                        <span></span>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+        {{ form_end(form) }}
+            </section>
+        </form>
+    </section>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script defer src="{{ asset('register-user/s.js')}}"></script>
+{% endblock %}

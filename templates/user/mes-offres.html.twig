@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes offres{% endblock %}
+
+{% block body %}
+    {% block Addoffre_modal %}
+        <div class="modal fade Addoffre-modal mt-5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-warning" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header text-center py-2 custum_header">
+                        <h4 class="modal-title white-text w-100 font-weight-bold py-2">Ajouter Offre</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        {{ form(form) }}
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+
+    {% endblock %}
+    <br><br><br><br><br><br><br>
+    <div class="card">
+        <br>
+        <button type="button" class="btn btn-info col-2 ml-3" data-toggle="modal" data-target=".Addoffre-modal">
+            Ajouter
+        </button>
+        <div class="card-body">
+            <table class="table">
+                <thead class="">
+                <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Contenu</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for publication in liste_publications|reverse %}
+                <tr>
+                    <th scope="row">{{ publication.id}}</th>
+                    <td>{{ publication.titre}}</td>
+                    <td>{{ publication.contenu}}</td>
+                    <td><a class="btn btn-primary" href="{{ path('offre', { 'id': publication.id }) }}" role="button">Ouvrir</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}
